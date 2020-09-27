@@ -13,20 +13,36 @@ public class Gestion extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String accion = request.getParameter("accion");
         String link = "";
         double primerNumero = Double.parseDouble(request.getParameter("primerNumero"));
         System.out.println(primerNumero);
         double segundoNumero = Double.parseDouble(request.getParameter("segundoNumero"));
 
-        if (accion.equals("suma")) {
-            System.out.println("FUNCIONO");
+        if (request.getParameter("sumar") != null) {
             Operacion operacion = new Operacion();
-            System.out.println("FUNCIONO");
             operacion.sumar(primerNumero, segundoNumero);
-            System.out.println("FUNCIONO");
             link = "";
-
+        }
+        
+        if (request.getParameter("multiplicar") != null) {
+            Operacion operacion = new Operacion();
+            operacion.multiplicar(primerNumero, segundoNumero);
+            link = "";
+        }
+        if (request.getParameter("mayor") != null) {
+            Operacion operacion = new Operacion();
+            operacion.obtenerMayor(primerNumero, segundoNumero);
+            link = "";
+        }
+        if (request.getParameter("potencia") != null) {
+            Operacion operacion = new Operacion();
+            operacion.obtenerPotencia(primerNumero, segundoNumero);
+            link = "";
+        }
+        if (request.getParameter("binario") != null) {
+            Operacion operacion = new Operacion();
+            operacion.convertirABinario(primerNumero, segundoNumero);
+            link = "";
         }
     }
 

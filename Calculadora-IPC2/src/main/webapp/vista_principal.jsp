@@ -6,7 +6,8 @@
 
 <body>
     <div>
-        <form action="<%=request.getContextPath()%>/Gestion?accion=suma" method="POST">
+
+        <form action="${pageContext.request.contextPath}/Gestion" method="POST">
             <div>
                 <div>
                     <div style="width: 100px;">
@@ -17,7 +18,7 @@
                     </div>
                 </div>
                 <div>
-                    <div style="width: 100px;">
+                    <div class="col" style="width: 100px;">
                         <b>Segundo Número (n2)</b>
                     </div>
 
@@ -28,12 +29,12 @@
                 </div>
                 <div>
 
-                    <div style="margin-top: 50px;margin-left: 15px;">			 
-                        <button type="submit">Sumar</button>
-                        <button type="submit">Multiplicar</button>
-                        <button type="submit">Obtener el número mayor</button>
-                        <button type="submit">Potencia (n1)^(n2) </button>
-                        <button type="submit">Valor Binario</button>
+                    <div style="margin-top: 50px;margin-left: 15px;">
+                        <input type="submit" name="sumar" value="Sumar" />
+                        <input type="submit" name="multiplicar" value="Multiplicar" />
+                        <input type="submit" name="mayor" value="Obtener Número Mayor" />
+                        <input type="submit" name="potencia" value="Potencia (n1)^(n2)" />
+                        <input type="submit" name="binario" value="Valor Binario" />
                     </div>
 
 
